@@ -3,32 +3,33 @@ public class IterativeSearcher {
 
 	public int doBinarySearch(IntegerArray arrayToSort, int i) {
 		int low = 0;
-		int high = arrayToSort.length();
+		int high = arrayToSort.length()-1;
+		int mid = 0;
 		
-		int output = -1;
 		
-		while(high > 2){
+		while(low <= high){			
+			mid = (high + low)/2;
 			
-			int mid = (high + low)/2;
+			int midValue = arrayToSort.read(mid);
+
 			
-			if (i == arrayToSort.read(mid)) {
-				output = arrayToSort.read(mid);
-				return output;
+			
+			
+			if (midValue == i) {			
+				return mid;
 			}
-			else if(i == high || i == arrayToSort.read(0)){
-				if(i == high) {
-					return high;
-				}
-				else {
-					return low;
-				}
+									
+			if (midValue < i) {
+				low = mid + 1;
 			}
 			else {
-				high = 0;
+				high = mid - 1;
 			}
 			
+			
 		}
-		return output;
+		return -1;
+		
 	}
 
 
