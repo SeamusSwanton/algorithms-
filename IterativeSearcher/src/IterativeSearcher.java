@@ -11,13 +11,20 @@ public class IterativeSearcher {
 			mid = (high + low)/2;
 			
 			int midValue = arrayToSort.read(mid);
-
 			
-			
-			
-			if (midValue == i) {			
+						
+			if (midValue == i) {	
+				if (mid == low || mid == high) {
+					return mid;
+				}
+				if (i == arrayToSort.read(mid-1)) {
+					high = mid;
+					continue;
+				}
 				return mid;
 			}
+			
+			
 									
 			if (midValue < i) {
 				low = mid + 1;
