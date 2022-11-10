@@ -22,9 +22,7 @@ public class IterativeSearcher {
 					continue;
 				}
 				return mid;
-			}
-			
-			
+			}		
 									
 			if (midValue < i) {
 				low = mid + 1;
