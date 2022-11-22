@@ -6,14 +6,14 @@ public class RecursiveSorter {
 
 	public void doMergeSort(IntegerArray array) {
 		int leftIndex = 0;
-		int rightIndex = array.length() - 1;
+		int rightIndex = array.length()-1;
 		
 		doMergeSort(array, leftIndex, rightIndex);
 	}
 	
-	public IntegerArray merge(IntegerArray array, int leftIndex, int mid, int rightIndex) {
+	public void merge(IntegerArray array, int leftIndex, int mid, int rightIndex) {
 		int[] output = new int[array.length()];
-
+		
 
 		int n1 = mid - leftIndex + 1;    
 		int n2 = rightIndex - mid; 
@@ -23,10 +23,10 @@ public class RecursiveSorter {
 
 
 		for (int i = 0; i <n1; i++) {
-			array.write(tempArrayLeft[i], (leftIndex + i));
+			tempArrayLeft[i] = (leftIndex + i);
 		}
 		for (int i = 0; i <n2; i++) {
-			array.write(tempArrayRight[i], (rightIndex + i));
+			tempArrayRight[i]= (rightIndex + i);
 		}
 
 		int a = 0, b = 0; 
@@ -34,27 +34,27 @@ public class RecursiveSorter {
 		while (a < n1 && b < n2) {
 
 			if (tempArrayLeft[a] <=  tempArrayRight[b]) {
-				array.write(output[k], tempArrayLeft[a]);
+				array.write(k, tempArrayLeft[a]);
 				a++;
 			}
 			else {
-				array.write(output[k], tempArrayLeft[b]);
+				array.write(k, tempArrayLeft[b]);
 				b++;
 			}
 			k++;
 		}
 		while (a < n1) {
-			array.write(output[k], tempArrayLeft[a]);
+			array.write(k, tempArrayLeft[a]);
             a++;
             k++;
 		}
 		while (b < n2) {
-			array.write(output[k], tempArrayLeft[b]);
+			array.write(k, tempArrayLeft[b]);
             b++;
             k++;
         }
 
-		return array;
+		
 	}
 	
 	
