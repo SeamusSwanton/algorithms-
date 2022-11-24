@@ -26,7 +26,7 @@ public class RecursiveSorter {
 			tempArrayLeft[i] = (leftIndex + i);
 		}
 		for (int i = 0; i <n2; i++) {
-			tempArrayRight[i]= (rightIndex + i);
+			tempArrayRight[i]= (rightIndex + i +1);
 		}
 
 		int a = 0, b = 0; 
@@ -38,7 +38,7 @@ public class RecursiveSorter {
 				a++;
 			}
 			else {
-				array.write(k, tempArrayLeft[b]);
+				array.write(k, tempArrayRight[b]);
 				b++;
 			}
 			k++;
@@ -49,7 +49,7 @@ public class RecursiveSorter {
             k++;
 		}
 		while (b < n2) {
-			array.write(k, tempArrayLeft[b]);
+			array.write(k, tempArrayRight[b]);
             b++;
             k++;
         }
