@@ -2,6 +2,8 @@ public class RecursiveSorter {
 	
 	public void doQuickSort(IntegerArray clone) {
 		
+		
+		
 	}
 
 	public void doMergeSort(IntegerArray array) {
@@ -23,14 +25,15 @@ public class RecursiveSorter {
 
 
 		for (int i = 0; i <n1; i++) {
-			tempArrayLeft[i] = (leftIndex + i);
+			tempArrayLeft[i] = array.read(leftIndex + i);
 		}
 		for (int i = 0; i <n2; i++) {
-			tempArrayRight[i]= (rightIndex + i +1);
+			tempArrayRight[i]= array.read(mid + i + 1 );
 		}
 
 		int a = 0, b = 0; 
 		int k = leftIndex;
+		
 		while (a < n1 && b < n2) {
 
 			if (tempArrayLeft[a] <=  tempArrayRight[b]) {
@@ -60,7 +63,7 @@ public class RecursiveSorter {
 	
 	public void doMergeSort(IntegerArray array, int leftIndex, int rightIndex) {	
 		if (leftIndex < rightIndex){
-			int mid = (leftIndex + rightIndex)/2;
+			int mid = (leftIndex + (rightIndex ))/2;
 			
 			doMergeSort(array, leftIndex, mid);			
 			doMergeSort(array, mid + 1, rightIndex);
