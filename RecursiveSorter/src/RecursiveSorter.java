@@ -14,7 +14,7 @@ public class RecursiveSorter {
 			
 			int partition = partition(clone, leftIndex, rightIndex);
 			
-			doQuickSort(clone, leftIndex, partition);			
+			doQuickSort(clone, leftIndex, partition - 1);			
 			doQuickSort(clone, partition + 1, rightIndex);
 		}
 	}
@@ -33,11 +33,16 @@ public class RecursiveSorter {
         		swap(clone, i, j);
         	}
         }
-		return 0;
+        swap(clone, i + 1, rightIndex);
+        return (i + 1);
 	}
 	
 	static void swap(IntegerArray clone, int i, int j) {
 		
+		int temp = clone.read(i);
+		
+		clone.write(i, clone.read(j));
+		clone.write(j, temp);
 	}
 	
 
