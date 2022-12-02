@@ -54,7 +54,7 @@ public class RecursiveSorter {
 	}
 	
 	public void merge(IntegerArray array, int leftIndex, int mid, int rightIndex) {
-		int[] output = new int[array.length()];
+
 		
 
 		int n1 = mid - leftIndex + 1;    
